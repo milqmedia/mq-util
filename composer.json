@@ -14,9 +14,6 @@
         "leafo/lessphp": "0.4.0"
     },
     "autoload": {
-	    "psr-0": {
-	        "MQLess": "src/"
-        },
         "classmap": [
             "./"
         ]

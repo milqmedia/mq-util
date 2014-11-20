@@ -3,7 +3,7 @@
 return array(
     'view_helpers' => array(  
         'invokables' => array(    
-            'cdn' => 'MQLess\View\Helper\Less',
+            'less' => 'MQLess\View\Helper\Less',
         ),
     ),
 );
