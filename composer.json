@@ -1,0 +1,24 @@
+{
+    "name": "milqmedia/mq-less",
+    "type": "library",
+    "description": "Milq Media LESS",
+    "keywords": [
+        "zf2",
+        "less",
+        "milq media"
+    ],
+    "homepage": "https://github.com/milqmedia/mq-less",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*",
+        "leafo/lessphp": "0.4.0"
+    },
+    "autoload": {
+	    "psr-0": {
+	        "MQLess": "src/"
+        },
+        "classmap": [
+            "./"
+        ]
+    }
+}
