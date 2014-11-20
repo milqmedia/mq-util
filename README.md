@@ -14,7 +14,7 @@ ZF2 Viewhelper to convert LESS files to CSS
 <html>
 <head>
 <title>MQLess</title>
-{$this->headLink()->setStylesheet($this->basePath($this->less('less/application.less')))}
+{$this->headLink()->setStylesheet($this->basePath($this->less('less/site.less')))}
 </head>
 <body>
 	{$this->content}
