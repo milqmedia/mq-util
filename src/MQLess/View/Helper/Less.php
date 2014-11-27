@@ -2,28 +2,41 @@
 namespace MQLess\View\Helper;
 
 use Zend\View\Helper\AbstractHelper;
-use Zend\Stdlib\Glob;
+use MQLess\Exception\RuntimeException;
 
 class Less extends AbstractHelper
 {
-	const PUBLIC_DIR = 'public/';
-	const DESTINATION_DIR = 'css/';
+	protected $config = array('source' => 'public/less', 'outputPath' => 'public/css', 'publicPath' => 'css');	
+	protected $less;
 	
-    public function __invoke($file, $minify = null)
+	public function __construct(\lessc $less, $config = array()) {
+		
+		$this->less = $less;
+		
+		if(!empty($config)) {
+			foreach($config as $key => $val) 
+				$this->config[$key] = $val;
+		}
+	}
+	
+    public function __invoke($file)
     {   	
-        if (!is_file(self::PUBLIC_DIR . $file)) {
-           return false;
-        }
+		$sourceDir = $this->config['source'];
+		$outputDir = $this->config['outputPath'];
+		$info = pathinfo($file);
+		
+        if (!is_file($sourceDir . '/' . $file)) {
+           throw new RuntimeException('No LESS file found @ ' . $sourceDir . '/' . $file);
+        }        
         
-        $less = new \lessc();
-        $info = pathinfo($file);
-        $newFile = self::DESTINATION_DIR . $info['filename'] . '.css';
-        $filetime = filemtime(self::PUBLIC_DIR . $file);
-                        
-        $_file = self::PUBLIC_DIR . $newFile;
-        
-        $less->checkedCompile(self::PUBLIC_DIR . $file, $_file);
-                        
-        return $newFile . '?' . $filetime;
+        $cssFile = $info['filename'] . '.css';
+        $lessFile = $sourceDir . '/' . $file;
+        $filetime = filemtime($sourceDir . '/' . $file);     
+
+        $this->less->checkedCompile($lessFile, $outputDir . '/' . $cssFile);
+         
+        $cssPath = $this->config['publicPath'] . '/' . $cssFile;
+                      
+        return $cssPath . '?' . $filetime;
     }
 }

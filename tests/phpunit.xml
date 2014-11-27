@@ -1,0 +1,15 @@
+<phpunit bootstrap="Bootstrap.php" colors="true" syntaxCheck="true" verbose="true" backupGlobals="false">
+    <testsuites>
+        <testsuite name="MQLess Test Suite">
+            <directory>./</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../src/MQLess</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="testdox-text" target="php://stdout"/>
+    </logging>
+</phpunit>
