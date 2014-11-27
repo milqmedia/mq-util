@@ -1,6 +1,8 @@
 mq-less
 =======
 
+[![Build Status](https://travis-ci.org/milqmedia/mq-less.svg?branch=master)](https://travis-ci.org/milqmedia/mq-less)
+
 ZF2 Viewhelper to convert LESS files to CSS
 
 ## Setup
