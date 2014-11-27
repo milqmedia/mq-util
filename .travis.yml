@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 5.5
+  - 5.6
+
+before_script:
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar install
+
+script: phpunit --configuration tests/phpunit.xml
+
+notifications:
+  email:
+    recipients:
+      - johan@milq.nl
+    on_success: never
+    on_failure: always
