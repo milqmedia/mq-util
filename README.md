@@ -9,8 +9,8 @@ mq-util
 
 ## Setup
 
-  1. Run `php composer.phar require milqmedia/mq-less:dev-master`
-  2. Add `MQLess` to the enabled modules list
+  1. Run `php composer.phar require milqmedia/mq-util:dev-master`
+  2. Add `MQUtil` to the enabled modules list
   3. Use the Less viewhelper to convert your LESS files or the JS viewhelper to get your versioned JS files
 
     ```html
