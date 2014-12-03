@@ -8,6 +8,9 @@ $config = array(
 					'outputPath' => 'public/assets/css', 
 					'publicPath' => 'assets/css'
 				),
+				'js' => array(
+					'assetsConfigPath' => __DIR__ . '/../../../../public/assets'
+				),
 			)
 		);
 		

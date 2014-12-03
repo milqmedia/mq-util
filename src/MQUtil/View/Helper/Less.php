@@ -17,7 +17,7 @@ class Less extends AbstractHelper
 			foreach($config as $key => $val) 
 				$this->config[$key] = $val;
 		}
-		
+
 		if(!file_exists($this->config['source']))
 			mkdir($this->config['source'], 0755, true);
 			

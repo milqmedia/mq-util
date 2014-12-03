@@ -5,6 +5,7 @@ use Zend\ModuleManager\ModuleManager;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use MQUtil\View\Helper\Less;
+use MQUtil\View\Helper\Js;
 
 class Module
 {	    
@@ -38,20 +39,29 @@ class Module
     }
 
     public function getViewHelperConfig()
-    {
+    {           
         $lessClosure = function ($sm) {
-            
-            $locator = $sm->getServiceLocator();
-            $config = $locator->get('Config');
-            
+     		
+     		$locator = $sm->getServiceLocator();
+	 		$config = $locator->get('Config');
+                          
             $lessConfig = (!empty($config['mq_util']['less'])) ? $config['mq_util']['less'] : [];
             
             return new Less($locator->get(self::LESS_SERVICE_NAME), $lessConfig);
         };
         
+        $jsClosure = function ($sm) {
+			
+			$locator = $sm->getServiceLocator();
+	 		$config = $locator->get('Config');
+	 		
+            return new Js($config['mq_util']['js']);
+        };
+        
         return array(
             'factories' => array(
-                'less' => $lessClosure,
+                'less' 	=> $lessClosure,
+                'js' 	=> $jsClosure,
             ),
         );
     }

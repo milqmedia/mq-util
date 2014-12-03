@@ -1,25 +1,28 @@
-mq-less
+mq-util
 =======
 
-[![Build Status](https://travis-ci.org/milqmedia/mq-less.svg?branch=master)](https://travis-ci.org/milqmedia/mq-less)
+[![Build Status](https://travis-ci.org/milqmedia/mq-util.svg?branch=master)](https://travis-ci.org/milqmedia/mq-util)
 
-Zend Framework 2 Viewhelper to convert LESS files to CSS
+Zend Framework 2 Viewhelpers
+- less() to convert LESS files to CSS
+- js() to retrieve versioned js files
 
 ## Setup
 
-  1. Run `php composer.phar require milqmedia/mq-less:dev-master`
-  2. Add `MQLess` to the enabled modules list
-  3. Use the Less viewhelper to convert your LESS files
+  1. Run `php composer.phar require milqmedia/mq-util:dev-master`
+  2. Add `MQUtil ` to the enabled modules list
+  3. Use the less or js viewhelper in your template
 
     ```html
 <!DOCTYPE html>					
 <html>
 <head>
-<title>MQLess</title>
+<title>MQUtil</title>
 {$this->headLink()->setStylesheet($this->basePath($this->less('less/site.less')))}
+{$this->headScript()->setFile({$this->basePath($this->js('jquery'))})}
 </head>
 <body>
-	{$this->content}
+Hello World
 </body>
 </html>
     ```
