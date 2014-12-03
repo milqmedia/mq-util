@@ -1,13 +1,15 @@
 {
-    "name": "milqmedia/mq-less",
+    "name": "milqmedia/mq-util",
     "type": "library",
     "description": "Milq Media LESS",
     "keywords": [
         "zf2",
         "less",
+        "javascript",
+        "view helpers",
         "milq media"
     ],
-    "homepage": "https://github.com/milqmedia/mq-less",
+    "homepage": "https://github.com/milqmedia/mq-util",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
