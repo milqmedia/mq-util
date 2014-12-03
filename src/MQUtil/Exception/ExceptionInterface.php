@@ -1,6 +1,6 @@
 <?php
 /**
- * MQLess
+ * MQUtil
  * Copyright (c) 2014 Milq Media.
  *
  * @author      Johan Kuijt <johan@milq.nl>
@@ -9,8 +9,8 @@
  * @link        http://milq.nl
  */
 
-namespace MQLess\Exception;
+namespace MQUtil\Exception;
 
-class RuntimeException extends \RuntimeException implements ExceptionInterface
+interface ExceptionInterface
 {
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * MQLess
+ * MQUtil
  * Copyright (c) 2014 Milq Media.
  *
  * @author      Johan Kuijt <johan@milq.nl>
@@ -9,8 +9,8 @@
  * @link        http://milq.nl
  */
  
-use MQLess\View\Helper\Less;
-use MQLess\Module;
+use MQUtil\View\Helper\Less;
+use MQUtil\Module;
 
 class LessTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,14 +1,14 @@
 <?php
-namespace MQLess;
+namespace MQUtil;
  
 use Zend\ModuleManager\ModuleManager;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-use MQLess\View\Helper\Less;
+use MQUtil\View\Helper\Less;
 
 class Module
 {	    
-	const SERVICE_NAME = 'lessc';
+	const LESS_SERVICE_NAME = 'lessc';
     
     public function getAutoloaderConfig()
     {
@@ -34,19 +34,21 @@ class Module
 	    $app    = $e->getApplication();
 	    $less 	= new \lessc();
 	
-        $app->getServiceManager()->setService(self::SERVICE_NAME, $less);
+        $app->getServiceManager()->setService(self::LESS_SERVICE_NAME, $less);
     }
 
     public function getViewHelperConfig()
     {
         $lessClosure = function ($sm) {
+            
             $locator = $sm->getServiceLocator();
             $config = $locator->get('Config');
             
-            $lessConfig = (!empty($config['mqless'])) ? $config['mqless'] : [];
+            $lessConfig = (!empty($config['mq_util']['less'])) ? $config['mq_util']['less'] : [];
             
-            return new Less($locator->get(self::SERVICE_NAME), $lessConfig);
+            return new Less($locator->get(self::LESS_SERVICE_NAME), $lessConfig);
         };
+        
         return array(
             'factories' => array(
                 'less' => $lessClosure,

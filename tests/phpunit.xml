@@ -1,12 +1,12 @@
 <phpunit bootstrap="Bootstrap.php" colors="true" syntaxCheck="true" verbose="true" backupGlobals="false">
     <testsuites>
-        <testsuite name="MQLess Test Suite">
+        <testsuite name="MQUtil Test Suite">
             <directory>./</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">../src/MQLess</directory>
+            <directory suffix=".php">../src/MQUtil</directory>
         </whitelist>
     </filter>
     <logging>

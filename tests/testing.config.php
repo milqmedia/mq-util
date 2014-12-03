@@ -1,6 +1,6 @@
 <?php
 /**
- * MQLess
+ * MQUtil
  * Copyright (c) 2014 Milq Media.
  *
  * @author      Johan Kuijt <johan@milq.nl>
