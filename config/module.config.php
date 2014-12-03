@@ -6,7 +6,7 @@ $config = array(
 				'less' => array(
 					'source' => 'assets/less', 
 					'outputPath' => 'public/assets/css', 
-					'publicPath' => 'css'
+					'publicPath' => 'assets/css'
 				),
 			)
 		);
