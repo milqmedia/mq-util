@@ -39,10 +39,31 @@ class Less extends AbstractHelper
         $lessFile = $sourceDir . '/' . $file;
         $filetime = filemtime($sourceDir . '/' . $file);     
 
-        $this->less->checkedCompile($lessFile, $outputDir . '/' . $cssFile);
+        $this->autoCompileLess($lessFile, $outputDir . '/' . $cssFile);
          
         $cssPath = $this->config['publicPath'] . '/' . $cssFile;
                       
         return $cssPath . '?' . $filetime;
     }
+    
+    private function autoCompileLess($inputFile, $outputFile) {
+
+		$importDirs = $this->config['import'];
+		$cacheFile = $inputFile . ".cache";
+
+		if (file_exists($cacheFile)) {
+			$cache = unserialize(file_get_contents($cacheFile));
+		} else {
+			$cache = $inputFile;
+		}
+
+		$this->less->setImportDir($importDirs);
+		
+		$newCache = $this->less->cachedCompile($cache);
+		
+		if (!is_array($cache) || $newCache["updated"] > $cache["updated"]) {
+			file_put_contents($cacheFile, serialize($newCache));
+			file_put_contents($outputFile, $newCache['compiled']);
+		}
+	}
 }
