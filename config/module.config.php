@@ -18,6 +18,11 @@ $config = array(
 					'MQUtil\Collector\Milq' => 'MQUtil\Collector\Milq',
 				)
 			),
+			'view_manager' => array(
+			    'template_map' => array(
+				    'zend-developer-tools/toolbar/milq' => __DIR__ . '/../view/zend-developer-tools/toolbar/milq.phtml'
+				),
+			),
 		);
 		
 return $config;		
