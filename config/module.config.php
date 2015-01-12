@@ -12,7 +12,12 @@ $config = array(
 				'js' => array(
 					'assetsConfigPath' => __DIR__ . '/../../../../public/assets'
 				),
-			)
+			),
+			'service_manager' => array(
+				'invokables' => array(
+					'MQUtil\Collector\Milq' => 'MQUtil\Collector\Milq',
+				)
+			),
 		);
 		
 return $config;		
