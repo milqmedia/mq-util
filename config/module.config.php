@@ -16,7 +16,10 @@ $config = array(
 			'service_manager' => array(
 				'invokables' => array(
 					'MQUtil\Collector\Milq' => 'MQUtil\Collector\Milq',
-				)
+				),
+				'factories'  => array(
+		            'MQUtil\Service\Paginator' => 'MQUtil\Service\PaginatorFactory',
+		        ),
 			),
 			'view_manager' => array(
 			    'template_map' => array(
