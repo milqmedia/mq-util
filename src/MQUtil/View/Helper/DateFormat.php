@@ -59,4 +59,9 @@ class DateFormat extends AbstractHelper
 		
 		return $agoString;
 	}
+	
+	public function dayName()
+	{		
+		return strftime('%A', $this->timestamp);
+	}
 }
