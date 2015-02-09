@@ -16,6 +16,7 @@ $config = array(
 	'view_helpers' => array(  
         'invokables' => array(  
             'dateFormat' => 'MQUtil\View\Helper\DateFormat',
+            'percent' => 'MQUtil\View\Helper\Percent',
         ),
     ),
 	'service_manager' => array(
