@@ -60,8 +60,10 @@ class DateFormat extends AbstractHelper
 		return $agoString;
 	}
 	
-	public function dayName()
+	public function dayName($short = false)
 	{		
-		return strftime('%A', $this->timestamp);
+		$format = ($short === true) ? '%a' : '%A';
+		
+		return strftime($format, $this->timestamp);
 	}
 }
