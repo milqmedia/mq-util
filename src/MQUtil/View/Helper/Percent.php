@@ -13,6 +13,9 @@ class Percent extends AbstractHelper
     		
     	$percent = round(($count / $total) * 100);
     	
+    	if($percent > 100)
+    		$percent = 100;
+    		
     	if($reverse) 
     		$percent = 100 - $percent;
     		
