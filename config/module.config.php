@@ -25,6 +25,15 @@ $config = array(
 		),
 		'factories'  => array(
             'MQUtil\Service\Paginator' => 'MQUtil\Service\PaginatorFactory',
+            'Zend\Log\Logger' => function($sm){
+                
+                $logger = new Zend\Log\Logger;
+                $writer = new MQUtil\Log\Writer\Doctrine($sm->get('doctrine.entitymanager.orm_default'));
+                 
+                $logger->addWriter($writer);  
+                 
+                return $logger;
+            },
         ),
 	),
 	'view_manager' => array(
