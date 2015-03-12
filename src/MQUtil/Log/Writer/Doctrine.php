@@ -16,14 +16,16 @@ class Doctrine extends AbstractWriter
     protected function doWrite(array $event)
     {
     	$entity = new \Application\Entity\System\Log();
-    	
+		
+		$reportId = explode(':', $event['message']);
+		
+    	$entity->setReportId($event['message']);
+    	$entity->setUserId($reportId[0]);
     	$entity->setPriority($event['priority']);
-    	$entity->setMessage($event['message']);
+    	$entity->setMessage(serialize($event['extra']));
     	$entity->setCreateDate($event['timestamp']);
     	
     	$this->em->persist($entity);
     	$this->em->flush();
-    	
-    	return $entity;
     }
 }
