@@ -41,16 +41,16 @@ class DateFormat extends AbstractHelper
 		} else if($time < 86400) {
 			$agoTime = round(($time / 60) / 24);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('hour ago') : $translate('hours ago'));
-		} else if($time < 604800 && $afterDayDate !== false) {
+		} else if($time < 604800 && $afterDayDate == false) {
 			$agoTime = round($time / 86400);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('day ago') : $translate('days ago'));
-		} else if($time < 2592000 && $afterDayDate !== false) {
+		} else if($time < 2592000 && $afterDayDate == false) {
 			$agoTime = round($time / 604800);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('week ago') : $translate('weeks ago'));
-		} else if($time < 31536000 && $afterDayDate !== false) {
+		} else if($time < 31536000 && $afterDayDate == false) {
 			$agoTime = round($time / 2592000);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('month ago') : $translate('months ago'));
-		} else if($time < 157680000 && $afterDayDate !== false) {
+		} else if($time < 157680000 && $afterDayDate == false) {
 			$agoTime = round($time / 31536000);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('year ago') : $translate('years ago'));
 		} else {
