@@ -24,6 +24,7 @@ $config = array(
 			'MQUtil\Collector\Milq' => 'MQUtil\Collector\Milq',
 		),
 		'factories'  => array(
+			'MQUtil\Service\ShortUrl' => 'MQUtil\Service\ShortUrlFactory',
             'MQUtil\Service\Paginator' => 'MQUtil\Service\PaginatorFactory',
             'Zend\Log\Logger' => function($sm){
                 
