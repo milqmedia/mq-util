@@ -1,6 +1,6 @@
 {
     "name": "milqmedia/mq-less",
-    "type": "zend-library"
+    "type": "zend-library",
     "description": "Milq Media LESS",
     "keywords": [
         "zf2",
