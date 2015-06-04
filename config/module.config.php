@@ -42,6 +42,9 @@ $config = array(
 		    'zend-developer-tools/toolbar/milq' => __DIR__ . '/../view/zend-developer-tools/toolbar/milq.phtml'
 		),
 	),
+	'google_short_url' => array(
+		'apiKey' => getenv('GOOGLE_SHORT_URL_API_KEY'),
+	),
 );
 		
 return $config;		
