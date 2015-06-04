@@ -30,7 +30,7 @@ class ShortUrl
 		$response = json_decode($json);
 		
 		if(!isset($response->kind) || $response->kind != 'urlshortener#url') {
-			throw new \MQUtil\Exception\RuntimeException('Shortening url failed. - ' . print_r($response));
+			throw new \MQUtil\Exception\RuntimeException('Shortening url failed: ' . print_r($response));
 		}
 			
 		return $response;
