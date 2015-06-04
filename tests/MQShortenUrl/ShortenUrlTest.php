@@ -17,7 +17,7 @@ class ShortenUrlTest extends TestCase
 {
     public function setUp()
     {
-	    putenv('GOOGLE_SHORT_URL_API_KEY=AIzaSyBw3EKWlHl2fY0lqYRoravDnpWPXnfDvao');
+	    // setup
     }
 
     public function testShortenUrlsWorks()
