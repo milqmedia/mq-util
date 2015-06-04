@@ -8,9 +8,11 @@ Basic utillities used in ZF2 controller and views.
 - js() to retrieve versioned js files
 
 **MQUtil\Collector\Milq**
+
 ZendDeveloperTools collector listing environment, timezone and defaultlocale
 
 **MQUtil\Log\Writer\Doctrine**
+
 Doctrine log writer
 
 ## Installation
