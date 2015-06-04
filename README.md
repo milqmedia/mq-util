@@ -1,11 +1,17 @@
-mq-util
+mq-util [![Build Status](https://travis-ci.org/milqmedia/mq-util.svg?branch=master)](https://travis-ci.org/milqmedia/mq-util)
 =======
 
-[![Build Status](https://travis-ci.org/milqmedia/mq-util.svg?branch=master)](https://travis-ci.org/milqmedia/mq-util)
+Basic utillities used in ZF2 controller and views.
 
-Zend Framework 2 View helpers
+**Zend Framework 2 View helpers**
 - less() to convert LESS files to CSS
 - js() to retrieve versioned js files
+
+**MQUtil\Collector\Milq**
+ZendDeveloperTools collector listing environment, timezone and defaultlocale
+
+**MQUtil\Log\Writer\Doctrine**
+Doctrine log writer
 
 ## Installation
 
@@ -30,3 +36,9 @@ Hello World
 </body>
 </html>
 ```
+
+**MQUtil\Collector\Milq**
+ZendDeveloperTools collector listing environment, timezone and defaultlocale
+
+**MQUtil\Log\Writer\Doctrine**
+Doctrine log writer
