@@ -41,8 +41,48 @@ Hello World
 
 **MQUtil\Collector\Milq**
 
-ZendDeveloperTools collector listing environment, timezone and defaultlocale
+Add the collector to the zdt config file
+
+```
+array(
+    'zenddevelopertools' => array(
+        'profiler' => array(
+            'collectors' => array('milq' => 'MQUtil\Collector\Milq'),
+        ),
+    )
+```
+
+And a template to the toolbar
+
+```
+array(
+    'zenddevelopertools' => array(
+        'toolbar' => array(
+          'entries'       => array(
+	          'milq' => 'zend-developer-tools/toolbar/milq',
+	        ),
+	      )
+	   )
+)
+```
 
 **MQUtil\Log\Writer\Doctrine**
 
-Doctrine log writer
+Copy the ```Log.php.dist``` file from the package root to your entity directory. Change the namespace if necessary.
+
+Use it like this: 
+```
+$this->getServiceLocator()->get('Zend\Log\Logger')->err("error")
+```
+
+## Development
+
+...
+
+## Contributing
+
+1. Fork it ( https://github.com/milqmedia/mq-util/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
