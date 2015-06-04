@@ -17,7 +17,7 @@ class ShortenUrlTest extends TestCase
 {
     public function setUp()
     {
-	    // setup
+
     }
 
     public function testShortenUrlsWorks()
