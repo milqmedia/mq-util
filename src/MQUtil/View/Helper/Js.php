@@ -24,6 +24,11 @@ class Js extends AbstractHelper
 	
     public function __invoke($assetName)
 	{
+		$array = $this->assets->{$assetName}->js;
+		
+		if(!is_array($array))
+			return null;
+			
 		return '/assets' . current($this->assets->{$assetName}->js);
     }
 }
