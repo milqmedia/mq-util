@@ -30,19 +30,28 @@ class Less extends AbstractHelper
 		$sourceDir = $this->config['source'];
 		$outputDir = $this->config['outputPath'];
 		$info = pathinfo($file);
-
-        if (!is_file($sourceDir . '/' . $file)) {
+		
+		$cssFile = $info['filename'] . '.css';
+        $lessFile = $sourceDir . '/' . $file;
+        $cssPath = $this->config['publicPath'] . '/' . $cssFile;
+        $filetime = filemtime($sourceDir . '/' . $file);  
+        
+        if (!is_file($cssPath) && $this->config['reCompileLess'] === false) {
+           throw new RuntimeException('No CSS file found @ ' . $sourceDir . '/' . $file);
+        } 
+        
+        // If recompile mode is false, we return the css path immediately. No LESS recompiling 
+        // on staging/production servers. This should be done locally in the deploy tool.
+        
+        if($this->config['reCompileLess'] === false)
+        	return $cssPath . '?' . $filetime;
+        	        	 
+        if (!is_file($lessFile)) {
            throw new RuntimeException('No LESS file found @ ' . $sourceDir . '/' . $file);
         }        
         
-        $cssFile = $info['filename'] . '.css';
-        $lessFile = $sourceDir . '/' . $file;
-        $filetime = filemtime($sourceDir . '/' . $file);     
-
         $this->autoCompileLess($lessFile, $outputDir . '/' . $cssFile);
-         
-        $cssPath = $this->config['publicPath'] . '/' . $cssFile;
-                      
+                              
         return $cssPath . '?' . $filetime;
     }
     

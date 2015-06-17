@@ -44,9 +44,9 @@ class Module
      		
      		$locator = $sm->getServiceLocator();
 	 		$config = $locator->get('Config');
-                          
-            $lessConfig = (!empty($config['mq_util']['less'])) ? $config['mq_util']['less'] : [];
             
+            $lessConfig = (!empty($config['mq_util']['less'])) ? $config['mq_util']['less'] : [];
+                        
             return new Less($locator->get(self::LESS_SERVICE_NAME), $lessConfig);
         };
         
