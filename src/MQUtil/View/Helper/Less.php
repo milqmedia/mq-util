@@ -36,8 +36,8 @@ class Less extends AbstractHelper
         $cssPath = $this->config['publicPath'] . '/' . $cssFile;
         $filetime = filemtime($sourceDir . '/' . $file);  
         
-        if (!is_file($cssPath) && $this->config['reCompileLess'] === false) {
-           throw new RuntimeException('No CSS file found @ ' . $sourceDir . '/' . $file);
+        if (!is_file($outputDir . '/' . $cssFile) && $this->config['reCompileLess'] === false) {
+           throw new RuntimeException('No CSS file found @ ' . $cssPath);
         } 
         
         // If recompile mode is false, we return the css path immediately. No LESS recompiling 
