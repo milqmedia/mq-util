@@ -27,6 +27,7 @@ class LessTest extends \PHPUnit_Framework_TestCase
 							'outputPath' 	=> __DIR__ . '/../../../data',
 							'publicPath' 	=> __DIR__ . 'css',
 							'import'		=> array(),
+							'reCompileLess'	=> true,
 						);
 	    
         $lessc = new \lessc();
