@@ -9,7 +9,10 @@ class DateFormat extends AbstractHelper
 	private $timestamp;
 	
 	public function __invoke($date) {
-	
+		
+		if(get_class($date) == 'DateTime')
+			$date = $date->getTimestamp();
+			 
 		$this->timestamp = $date;
 		
 		return $this;	
