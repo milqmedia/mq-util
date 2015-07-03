@@ -69,4 +69,9 @@ class DateFormat extends AbstractHelper
 		
 		return strftime($format, $this->timestamp);
 	}
+	
+	public function monthName()
+	{		
+		return strftime('%B', $this->timestamp);
+	}
 }
