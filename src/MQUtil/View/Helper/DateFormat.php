@@ -25,7 +25,7 @@ class DateFormat extends AbstractHelper
 		else if(date('Y',$this->timestamp) == date('Y'))
 			return date('d-m H:i', $this->timestamp);
 		else 
-			return date('d M y H:i', $this->timestamp);
+			return date('d-m-y H:i', $this->timestamp);
 	}
 	
 	public function ago($afterDayDate = false)
