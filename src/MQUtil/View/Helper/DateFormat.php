@@ -32,8 +32,8 @@ class DateFormat extends AbstractHelper
 	{		
 		$time = time() - $this->timestamp;
 		$translate = $this->view->plugin('translate');
-		
-		if($time < 60) {
+
+		if($time < 10) {
 			$agoString = $translate('nu');
 		} else if($time < 60) {
 			$agoTime = $time;
@@ -42,7 +42,7 @@ class DateFormat extends AbstractHelper
 			$agoTime = round($time / 60);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('minute ago') : $translate('minutes ago'));
 		} else if($time < 86400) {
-			$agoTime = round(($time / 60) / 24);
+			$agoTime = round(($time / 60) / 60);
 			$agoString = $agoTime . ' ' . sprintf(($agoTime == 1) ? $translate('hour ago') : $translate('hours ago'));
 		} else if($time < 604800 && $afterDayDate == false) {
 			$agoTime = round($time / 86400);
