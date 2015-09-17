@@ -20,11 +20,6 @@ $config = array(
             'percent' => 'MQUtil\View\Helper\Percent',
         ),
     ),
-    'controller_plugins' => array(
-        'invokables' => array(
-            'Cache' => 'MQUtil\Controller\Plugin\Cache',
-        )
-    ),
 	'service_manager' => array(
 		'invokables' => array(
 			'MQUtil\Collector\Milq' => 'MQUtil\Collector\Milq',
