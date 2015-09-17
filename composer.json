@@ -1,12 +1,12 @@
 {
-    "name": "milqmedia/mq-less",
-    "description": "Milq Media LESS",
+    "name": "milqmedia/mq-util",
+    "description": "Milq Media Utilities",
     "keywords": [
         "zf2",
-        "less",
+        "util",
         "milq media"
     ],
-    "homepage": "https://github.com/milqmedia/mq-less",
+    "homepage": "https://github.com/milqmedia/mq-util",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
