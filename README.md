@@ -19,6 +19,11 @@ Doctrine log writer
 
 Url shortner using the Google urlshortener API.
 
+**MQUtil\Service\Paginator**
+
+Super simple and easy to use pagination class
+
+
 ## Installation
 
   1. Run `php composer.phar require milqmedia/mq-util:dev-master`
@@ -104,6 +109,13 @@ If successful, the response will look like:
  "id": "http://goo.gl/fbsS",
  "longUrl": "http://www.google.com/"
 }
+```
+
+**MQUtil\Service\Paginator**
+
+Create a new pagination object:
+```
+$paginator = $this->getServiceLocator()->get('MQUtil\Service\Paginator')->getPaginator($numberOfItems, $numberOfItemsPerPage, $currentPage);
 ```
 
 ## Development
