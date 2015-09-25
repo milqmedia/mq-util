@@ -15,6 +15,10 @@ ZendDeveloperTools collector listing environment, timezone and defaultlocale
 
 Doctrine log writer
 
+**MQUtil\Service\ShortUrl**
+
+Url shortner using the Google urlshortener API.
+
 ## Installation
 
   1. Run `php composer.phar require milqmedia/mq-util:dev-master`
@@ -73,6 +77,33 @@ Copy the ```Log.php.dist``` file from the package root to your entity directory.
 Use it like this: 
 ```
 $this->getServiceLocator()->get('Zend\Log\Logger')->err("error")
+```
+
+**MQUtil\Service\ShortUrl**
+
+Configure your Google API Key:
+
+```
+return array(
+	'google_short_url' => array(
+		'apiKey' => '<key>',
+	)
+);
+```
+
+Use it like this:
+```
+$shortUrlApi = $this->getServiceLocator()->get('MQUtil\Service\ShortUrl');
+$response = $shortUrlApi->shortenUrl('http://google.com');
+```
+
+If successful, the response will look like:
+```
+{
+ "kind": "urlshortener#url",
+ "id": "http://goo.gl/fbsS",
+ "longUrl": "http://www.google.com/"
+}
 ```
 
 ## Development
