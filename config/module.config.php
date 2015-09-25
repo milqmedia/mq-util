@@ -27,6 +27,7 @@ $config = array(
 		'factories'  => array(
 			'MQUtil\Service\ShortUrl' => 'MQUtil\Service\ShortUrlFactory',
             'MQUtil\Service\Paginator' => 'MQUtil\Service\PaginatorFactory',
+            'MQUtil\Service\Iterator' => 'MQUtil\Service\IteratorFactory',
             'Zend\Log\Logger' => function($sm){
                 
                 $logger = new Zend\Log\Logger;

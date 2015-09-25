@@ -10,15 +10,14 @@ class Paginator
 	private $currentPage = 1;
 	private $itemArray = [];
 	
-	public function getPaginator($totalRows, $rowsPerPage, $currentPage, $itemArray = []) {
+	public function getPaginator($totalRows, $rowsPerPage, $currentPage) {
 		
 		$this->totalRows = $totalRows;
 		$this->rowsPerPage = $rowsPerPage;
 		$this->currentPage = $currentPage;
-		$this->itemArray = $itemArray;
 		
 		$this->setData($this->pagingInfo());
-
+					
 		return $this;
 	}
 	
@@ -41,20 +40,10 @@ class Paginator
 		
 		$this->data = $data;
 	}
-	
-	public function setArray($array) {
-		
-		$this->itemArray = $array;
-	}
-	
+
 	public function next() {
 		
 		return ($this->data['page'] < $this->data['total']) ? $this->data['page'] + 1 : false;
-	}
-	
-	public function nextItem() {
-		
-		return ($this->next()) ? $this->itemArray[$this->next()] : false;
 	}
 	
 	public function prev() {
@@ -62,19 +51,9 @@ class Paginator
 		return ($this->data['page'] > 1) ? $this->data['page'] - 1 : false;
 	}
 	
-	public function prevItem() {
-		
-		return ($this->prev()) ? $this->itemArray[$this->prev()] : false;
-	}
-	
 	public function current() {
 		
 		return $this->data['page'];
-	}
-	
-	public function currentItem() {
-		
-		return $this->itemArray[$this->data['page']];
 	}
 	
 	public function total() {
