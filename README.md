@@ -37,29 +37,30 @@ Super simple and easy to use iteration class with prevItem support
 
 ## Usage
 
-**View helpers**
+**Less & JS helpers**
 
-```html
-<!DOCTYPE html>					
-<html>
-<head>
-<title>MQUtil</title>
-{$this->headLink()->setStylesheet($this->basePath($this->less('less/site.less')))}
-{$this->headScript()->setFile({$this->basePath($this->js('jquery'))})}
-</head>
-<body>
-Hello World
-</body>
-</html>
 ```
-**Percent**
+$this->headLink()->setStylesheet($this->basePath($this->less('less/site.less')))
+$this->headScript()->setFile({$this->basePath($this->js('jquery')))
+```
+**Percent view helper**
 ```
 $this->percent($total, $count, $reverse = false);
 ```
  - **$total**: Total items
  - **$count**: Items to calculate percentage of
  - **$reverse**: Return the remaining percentage instead of the calculated percentage
- 
+
+**DateFormat view helper**
+```
+$this->dateFormat($date)->dayName();
+```
+Available methods:
+- **forumDate**: Returns "H:i" if today, "d-m H:i" if this year, else "d-m-y H:i"
+- **ago**: Returns seconds, minutes, hours, days, etc. ago since given date
+- **dayName($short = false)**: Dayname for the given date, if short is true dayname is in a short format e.g. Sun.
+- **monthName**: Monthname for the given date
+
 **MQUtil\Collector\Milq**
 
 Add the collector to the zdt config file
