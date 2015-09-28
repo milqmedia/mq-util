@@ -23,6 +23,9 @@ Url shortner using the Google urlshortener API.
 
 Super simple and easy to use pagination class
 
+**MQUtil\Service\Iterator**
+
+Super simple and easy to use iteration class with prevItem support
 
 ## Installation
 
@@ -116,6 +119,31 @@ If successful, the response will look like:
 Create a new pagination object:
 ```
 $paginator = $this->getServiceLocator()->get('MQUtil\Service\Paginator')->getPaginator($numberOfItems, $numberOfItemsPerPage, $currentPage);
+```
+Available methods:
+```
+$paginator->next();
+$paginator->prev();
+$paginator->current();
+$paginator->total();
+$paginator->offsetStart();
+$paginator->isLastPage();
+```
+
+**MQUtil\Service\Iterator**
+
+Create a new iteration object:
+```
+$iterator = $this->getServiceLocator()->get('MQUtil\Service\Iterator')->getIterator($array, $currentItem);
+```
+Available methods:
+```
+$iterator->hasNext();
+$iterator->nextItem();
+$iterator->hasPrev();
+$iterator->prevItem();
+$iterator->currentItem();
+$iterator->isLastItem();
 ```
 
 ## Development
