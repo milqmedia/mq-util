@@ -2,7 +2,7 @@
 	
 namespace MQUtil\Service;
 
-class Iterator 
+class Iterator
 {
 	private $iterator;
 	
@@ -55,7 +55,7 @@ class Iterator
 		return $this->iterator->current();
 	}
 	
-	public function isLastPage() {
+	public function isLastItem() {
 		
 		return $this->iterator->valid();
 	}
