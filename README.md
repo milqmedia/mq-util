@@ -6,6 +6,8 @@ Basic utillities used in ZF2 controller and views.
 **Zend Framework 2 View helpers**
 - less() to convert LESS files to CSS
 - js() to retrieve versioned js files
+- dateFormat() to format dates in different, many used, formats
+- percent() to quickly calculate a percentage
 
 **MQUtil\Collector\Milq**
 
@@ -50,7 +52,14 @@ Hello World
 </body>
 </html>
 ```
-
+**Percent**
+```
+$this->percent($total, $count, $reverse = false);
+```
+ - **$total**: Total items
+ - **$count**: Items to calculate percentage of
+ - **$reverse**: Return the remaining percentage instead of the calculated percentage
+ 
 **MQUtil\Collector\Milq**
 
 Add the collector to the zdt config file
