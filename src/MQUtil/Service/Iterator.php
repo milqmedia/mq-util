@@ -16,8 +16,8 @@ class Iterator
 	
 	public function hasNext() {
 		
-		$nextKey = $this->iterator->key() + 1;	
-		
+		$nextKey = $this->iterator->key() + 2;	
+
 		return $this->iterator->offsetExists($nextKey);
 	}
 	
