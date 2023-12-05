@@ -1,5 +1,7 @@
-mq-util [![Build Status](https://travis-ci.org/milqmedia/mq-util.svg?branch=master)](https://travis-ci.org/milqmedia/mq-util)
+mq-util
 =======
+
+> **`mq-util` is deprecated**. Please use another package with active development.
 
 Basic utillities used in ZF2 controller and views.
 
